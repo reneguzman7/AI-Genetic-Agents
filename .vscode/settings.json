@@ -1,0 +1,8 @@
+{
+  "java.project.referencedLibraries": [
+    "lib/**/*.jar",
+    "java-projects/agentes-inteligentes/lib/Base64.jar",
+    "java-projects/agentes-inteligentes/lib/commons-codec-1.3.jar",
+    "java-projects/agentes-inteligentes/lib/jade.jar"
+  ]
+}
