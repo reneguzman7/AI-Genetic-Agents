@@ -32,8 +32,8 @@ public class Mensajes {
             } catch (IOException e) {
                 Logger.getLogger(Mensajes.class.getName()).log(Level.SEVERE, null, e);
             }
-            
-        } 
+
+        }
 
         emisor.send(aclm);
     }
