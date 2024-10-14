@@ -30,7 +30,7 @@ public class Agente3 extends Agent {
                 entrada = (Entrada) aclMSJ.getContentObject();
                 entrada.setSensor3(entrada.getSensor3() + 1);
                 int sensor3 = entrada.getSensor3();
-                System.out.println(aclMSJ.getSender().getLocalName() + " dice: " + sensor3);
+                System.out.println(" dice: " + sensor3);
                 contenedor = (Contenedor) getArguments()[0];
                 doDelete();
             } catch (UnreadableException e) {

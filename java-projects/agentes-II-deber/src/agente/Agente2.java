@@ -16,13 +16,14 @@ public class Agente2 extends Agent {
     class Comportamiento extends CyclicBehaviour {
         @Override
         public void action() {
+            ACLMessage aclMSJ = blockingReceive(); 
+            
+
             Entrada entrada = (Entrada)getArguments()[0]; 
             
             Mensajes.send_msj(ACLMessage.INFORM, alias, getAgent(), "cod-2-3", null, entrada);
             Mensajes.send_msj(ACLMessage.INFORM, "Ag4", getAgent(), "cod-2-4", "Hola mi nombre es " + getName(), null);
-            ACLMessage aclMSJ = blockingReceive(); 
-            alias = aclMSJ.getSender().getLocalName();
-            System.out.println("Mensaje recibido: " + aclMSJ.getContent());
+            
 
         }
     }

@@ -3,12 +3,13 @@ package agente;
 import jade.core.Agent;
 import jade.core.behaviours.CyclicBehaviour;
 import jade.lang.acl.ACLMessage;
+import jade.lang.acl.UnreadableException;
 
 public class AgenteHijo extends Agent {
     Contenedor contenedor;
     Entrada entrada;
 
-    @Override
+            @Override
     protected void setup() {
         addBehaviour(new Comportamiento());
 
@@ -23,13 +24,19 @@ public class AgenteHijo extends Agent {
 
         @Override
         public void action() {
-            System.out.println(getAgent());
-            entrada = (Entrada) getArguments()[0];
-            System.out.println(entrada.getSensor3());
-            entrada.setSensor3(entrada.getSensor3() + 1);
+            ACLMessage acl = blockingReceive();
+            Entrada entrada = null;
+            try {
+                entrada = (Entrada) acl.getContentObject();
+            } catch (UnreadableException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            System.out.println();
+            
             Mensajes.send_msj(ACLMessage.INFORM, "Ag4", getAgent(), "cod-hijo-4", null, entrada);
             contenedor = (Contenedor) getArguments()[0];
-            ACLMessage acl = blockingReceive();
+            
             doDelete();
 
 

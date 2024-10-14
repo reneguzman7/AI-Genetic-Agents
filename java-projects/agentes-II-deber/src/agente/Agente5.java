@@ -15,7 +15,7 @@ public class Agente5 extends Agent {
         @Override
         public void action() {
             ACLMessage aclMSJ = blockingReceive();
-            System.out.println("Mensaje recibido: " + aclMSJ.getContent());
+            System.out.println("Mensaje recibido: " +aclMSJ.getSender()+ aclMSJ.getContent());
             Mensajes.send_msj(ACLMessage.INFORM, "Ag1", getAgent(), "cod-5-1", "Hola mi nombre es " + getName(), null);
         }
     }
