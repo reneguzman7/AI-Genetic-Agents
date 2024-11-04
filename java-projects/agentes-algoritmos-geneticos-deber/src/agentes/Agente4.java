@@ -22,7 +22,7 @@ public class Agente4 extends Agent {
             if (acl != null) {
                 ecuacion = acl.getContent();
                 new AGConfiguration().configuracionAG();
-                // resolver la ecuacion mediante algoritmo genetico
+                
                 double valor_optimo = 0;
                 String resultado = Double.toString(valor_optimo);
                 Mensaje.sendMSJ(ACLMessage.INFORM, "Ag5", getAgent(), "result-ec3", resultado, null);

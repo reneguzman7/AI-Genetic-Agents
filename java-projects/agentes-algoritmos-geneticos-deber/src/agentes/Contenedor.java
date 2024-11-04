@@ -10,12 +10,6 @@ public class Contenedor {
 
     static AgentContainer agentContainer;
 
-    // private String[] ecuaciones = {
-    //     "Math.pow(Math.log(x+y),2)",
-    //     "Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2)) / (x + y)",
-    //     "1 / (1 + Math.exp(-1))"
-    // };    
-
     public void configurarContenedor(){
         jade.core.Runtime runtime = jade.core.Runtime.instance();
         ProfileImpl profile = new ProfileImpl(null,1099,null);
